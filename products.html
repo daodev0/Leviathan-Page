@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leviathan Games | Catálogo de productos</title>
+    <meta
+      name="description"
+      content="Catálogo de productos de Leviathan Games: audífonos, relojes inteligentes, accesorios y tecnología para Cartagena."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container navbar">
+        <div class="brand">
+          <div class="brand-mark">L</div>
+          <span>Leviathan Games</span>
+        </div>
+
+        <nav class="nav-links" aria-label="Navegación principal">
+          <a href="index.html">Inicio</a>
+          <a href="productos.html">Productos</a>
+          <a href="index.html#nosotros">Nosotros</a>
+          <a href="index.html#contacto">Contacto</a>
+        </nav>
+
+        <div class="nav-actions">
+          <span class="cart-pill">Carrito <strong id="cart-count">0</strong></span>
+          <a href="index.html#contacto" class="btn btn-primary">Solicitar</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-header">
+        <div class="container">
+          <h1 class="page-title">Catálogo tecnológico</h1>
+          <p class="page-intro">
+            Descubre nuestra selección de audífonos, relojes inteligentes y accesorios tech diseñados para
+            acompañarte en tu día a día con estilo, comodidad y rendimiento.
+          </p>
+
+          <div class="filter-group" aria-label="Filtros de productos">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="audio">Audio</button>
+            <button class="filter-btn" data-filter="wearable">Wearables</button>
+            <button class="filter-btn" data-filter="accesorios">Accesorios</button>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="product-grid">
+            <article class="product-card" data-category="audio">
+              <div class="product-visual">🎧</div>
+              <span class="product-tag">Audio</span>
+              <h3>Audífonos Pro X</h3>
+              <p>Sonido envolvente con cancelación activa de ruido y batería de larga duración.</p>
+              <p class="product-price">$249.900</p>
+              <div class="product-meta">
+                <span>4.8/5</span>
+                <button class="product-btn" data-add-to-cart>Agregar</button>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="audio">
+              <div class="product-visual">🎵</div>
+              <span class="product-tag">Audio</span>
+              <h3>Earbuds Air Mini</h3>
+              <p>Formatos compactos, conexión rápida y gran calidad de audio para uso diario.</p>
+              <p class="product-price">$149.900</p>
+              <div class="product-meta">
+                <span>4.7/5</span>
+                <button class="product-btn" data-add-to-cart>Agregar</button>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="wearable">
+              <div class="product-visual">⌚</div>
+              <span class="product-tag">Wearable</span>
+              <h3>Reloj Titan Smart</h3>
+              <p>Monitorea actividad física, sueño y notificaciones directamente en tu muñeca.</p>
+              <p class="product-price">$299.900</p>
+              <div class="product-meta">
+                <span>4.9/5</span>
+                <button class="product-btn" data-add-to-cart>Agregar</button>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="wearable">
+              <div class="product-visual">📡</div>
+              <span class="product-tag">Wearable</span>
+              <h3>Band Pulse 7</h3>
+              <p>Tracker inteligente con diseño ligero, resistencia y métricas útiles para tu salud.</p>
+              <p class="product-price">$119.900</p>
+              <div class="product-meta">
+                <span>4.6/5</span>
+                <button class="product-btn" data-add-to-cart>Agregar</button>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="accesorios">
+              <div class="product-visual">🔋</div>
+              <span class="product-tag">Accesorios</span>
+              <h3>Cargador Turbo 65W</h3>
+              <p>Carga rápida para smartphone, portátil y otros dispositivos con mayor eficiencia.</p>
+              <p class="product-price">$89.900</p>
+              <div class="product-meta">
+                <span>4.8/5</span>
+                <button class="product-btn" data-add-to-cart>Agregar</button>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="accesorios">
+              <div class="product-visual">🔊</div>
+              <span class="product-tag">Accesorios</span>
+              <h3>Altavoz Portátil Wave</h3>
+              <p>Sonido potente y portátil para viajes, reuniones o momentos de entretenimiento.</p>
+              <p class="product-price">$179.900</p>
+              <div class="product-meta">
+                <span>4.7/5</span>
+                <button class="product-btn" data-add-to-cart>Agregar</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-wrap">
+        <p>© <span id="year"></span> Leviathan Games. Todos los derechos reservados.</p>
+
+        <div class="nav-links">
+          <a href="index.html">Inicio</a>
+          <a href="productos.html">Productos</a>
+          <a href="index.html#contacto">Contacto</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
