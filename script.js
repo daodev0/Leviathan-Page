@@ -14,11 +14,57 @@ document.addEventListener('DOMContentLoaded', () => {
   const contactForm = document.getElementById('contact-form');
   const formStatus = document.getElementById('form-status');
 
+  const APPS_SCRIPT_URL = 'YOUR_APPS_SCRIPT_WEB_APP_URL';
+
   if (contactForm) {
-    contactForm.addEventListener('submit', () => {
+    contactForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
       if (formStatus) {
         formStatus.textContent = 'Enviando tu mensaje...';
         formStatus.style.color = '#7ef0d8';
+      }
+
+      if (APPS_SCRIPT_URL === 'YOUR_APPS_SCRIPT_WEB_APP_URL') {
+        if (formStatus) {
+          formStatus.textContent = 'Configura la URL de tu Google Apps Script para enviar los mensajes.';
+          formStatus.style.color = '#f7b267';
+        }
+        return;
+      }
+
+      const formData = new FormData(contactForm);
+      const payload = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        message: formData.get('message')
+      };
+
+      try {
+        const response = await fetch(APPS_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'cors',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) {
+          throw new Error('Error del servidor');
+        }
+
+        if (formStatus) {
+          formStatus.textContent = '¡Mensaje enviado correctamente!';
+          formStatus.style.color = '#7ef0d8';
+        }
+
+        contactForm.reset();
+      } catch (error) {
+        if (formStatus) {
+          formStatus.textContent = 'No se pudo enviar el mensaje. Inténtalo de nuevo.';
+          formStatus.style.color = '#f7b267';
+        }
       }
     });
   }
